@@ -9,12 +9,17 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r, echo= FALSE, warning = FALSE, message= FALSE}
 library(tidyverse)
 library(here)
 ```
 
-```{r}
+```{r, echo= FALSE, warning = FALSE, message= FALSE}
 ucsb_grad <- read_csv(here("data", "ucsb_grad_data.csv"))
+```
+
+```{r}
+ggplot(ucsb_grad, aes(year_abbr, domestic_enrollment, fill= ethnicity)) +
+  geom_col()
 ```
 
